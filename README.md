@@ -7,7 +7,7 @@
 <a href="https://en.cppreference.com/"><img src="https://img.shields.io/badge/language-C++-black.svg?color=379c9c&style=flat-square"/></a>
 <a href="https://img.shields.io/badge/platform-linux%20%7C%20macos%20%7C%20windows-black.svg?color=379c9c&style=flat-square"><img src="https://img.shields.io/badge/platform-linux%20%7C%20macos%20%7C%20windows-black.svg?color=379c9c&style=flat-square"/></a>
 <a href="https://github.com/sogou/srpc/releases"><img src="https://img.shields.io/github/v/release/sogou/srpc?color=379c9c&logoColor=ffffff&style=flat-square"/></a>
-<a href="https://travis-ci.com/sogou/srpc"><img src="https://img.shields.io/travis/sogou/srpc/master?color=379c9c&style=flat-square"/></a>
+<a href="https://github.com/sogou/srpc/actions?query=workflow%3A%22ci+build%22++"><img src="https://img.shields.io/github/workflow/status/sogou/srpc/ci%20build?color=379c9c&style=flat-square"/></a>
 
 ## Introduction
 
@@ -71,6 +71,37 @@ git clone --recursive https://github.com/sogou/srpc.git
 cd srpc
 make
 ~~~
+
+### Installation(Debian Linux):
+srpc has been packaged for Debian. It is currently in Debian sid (unstable) but will eventually be placed into the stable repository.
+
+In order to access the unstable repository, you will need to edit your /etc/apt/sources.list file.
+
+sources.list has the format: `deb <respository server/mirror> <repository name> <sub branches of the repo>`
+
+Simply add the 'unstable' sub branch to your repo:
+~~~~sh
+deb http://deb.debian.org/ main contrib non-free 
+
+--> 
+
+deb http://deb.debian.org/ unstable main contrib non-free
+~~~~
+
+Once that is added, update your repo list and then you should be able to install it:
+~~~~sh
+sudo apt-get update
+~~~~
+
+To install the srpc library for development purposes:
+~~~~sh
+sudo apt-get install libsrpc-dev
+~~~~
+
+To install the srpc library for deployment:
+~~~~sh
+sudo apt-get install libsrpc
+~~~~
 
 ## Tutorial
 
